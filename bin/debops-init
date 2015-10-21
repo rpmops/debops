@@ -58,6 +58,18 @@ DEFAULT_DEBOPS_CONFIG = """
 [ansible defaults]
 ;callback_plugins = /my/plugins/callback
 ;roles_path = /my/roles
+;private_key_file = ~/.vagrant.d/insecure_private_key
+;remote_user = vagrant
+;host_key_checking = False
+;fact_caching = redis
+;fact_caching_timeout = 86400
+;fact_caching_connection = 127.0.0.1:6379:0
+
+[privilege_escalation]
+;become=True
+;become_method='sudo'
+;become_user='root'
+;become_ask_pass=False
 
 [ansible paramiko]
 ;record_host_keys=True

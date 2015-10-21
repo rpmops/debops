@@ -161,8 +161,10 @@ def main(project_dir=None):
     # a project directory and clone DebOps playbooks inside
     if project_dir:
         # If it's a new project, create the directory for it
+        orig_project_dir = project_dir
+        project_dir = os.path.abspath(project_dir)
         if not os.path.exists(project_dir):
-            print ("Creating project directory in", project_dir)
+            print ("Creating project directory in", orig_project_dir)
             os.makedirs(project_dir)
 
         # Make sure that playbooks and roles will be installed in project
